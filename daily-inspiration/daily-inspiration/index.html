@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ff">
+  <meta name="description" content="A little inspiration for your day. Discover, save, copy and share thoughtful quotes.">
+  <title>Daily Inspiration — Random Quote Generator</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daily Inspiration home"><span class="brand-mark">✦</span><span>Daily Inspiration</span></a>
+      <nav class="top-actions" aria-label="Main navigation">
+        <button class="nav-button" id="showFavorites" type="button" aria-label="View favorites">♡ <span>Favorites</span><span class="favorite-count" id="favoriteCount">0</span></button>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch color theme" title="Toggle theme">☾</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="homeView">
+        <p class="eyebrow"><span class="sparkle">✧</span> YOUR DAILY MOMENT OF CLARITY</p>
+        <h1>A Little Inspiration<br><span>for Your Day</span></h1>
+        <p class="intro">Pause for a moment. Find a thought worth carrying with you.</p>
+
+        <div class="filter-wrap">
+          <label for="categoryFilter">Explore by category</label>
+          <select id="categoryFilter">
+            <option value="All">All quotes</option>
+            <option>Motivation</option><option>Success</option>
+            <option>Education</option><option>Happiness</option><option>Friendship</option><option>Life</option>
+          </select>
+        </div>
+
+        <article class="quote-card" aria-live="polite" aria-atomic="true">
+          <div class="quote-top"><span class="quote-mark">“</span><span class="category-pill" id="quoteCategory">INSPIRATION</span></div>
+          <div class="quote-content" id="quoteContent">
+            <p class="quote-text" id="quoteText">A little inspiration is on its way...</p>
+            <p class="quote-author" id="quoteAuthor"></p>
+          </div>
+          <div class="quote-bottom">
+            <span class="quote-index" id="quoteIndex">A THOUGHT FOR TODAY</span>
+            <div class="card-actions">
+              <button class="round-action" id="copyButton" type="button" title="Copy quote" aria-label="Copy quote">▢</button>
+              <button class="round-action" id="shareButton" type="button" title="Share quote" aria-label="Share quote">↗</button>
+              <button class="round-action favorite-action" id="favoriteButton" type="button" title="Add to favorites" aria-label="Add to favorites">♡</button>
+            </div>
+          </div>
+        </article>
+
+        <button class="new-quote-button" id="newQuoteButton" type="button"><span>✦</span> New Quote <span class="button-arrow">→</span></button>
+        <p class="keyboard-hint">A fresh perspective is just one click away.</p>
+      </section>
+
+      <section class="favorites-view hidden" id="favoritesView">
+        <div class="favorites-heading">
+          <div><p class="eyebrow">YOUR PERSONAL COLLECTION</p><h1>Saved <span>Favorites</span></h1><p class="intro">The words you want to keep close.</p></div>
+          <button class="back-button" id="backHome" type="button">← Back to quotes</button>
+        </div>
+        <div class="favorites-list" id="favoritesList"></div>
+      </section>
+    </main>
+
+    <footer><span class="footer-star">✧</span> One quote can change your perspective.</footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="assets/quotes.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
